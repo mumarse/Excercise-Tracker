@@ -1,0 +1,59 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* one column */
+    grid-row-gap: 10px;
+    /* space between form elements */
+}
+
+label {
+    display: block;
+    /* each form element takes up one row */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    /* the input fields fill up the entire column width */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

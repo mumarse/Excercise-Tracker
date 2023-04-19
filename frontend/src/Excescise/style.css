@@ -1,0 +1,41 @@
+/* Frorm Css  */
+.exercise-form-container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.exercise-form-container h2 {
+    margin-top: 100px;
+}
+
+.exercise-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
