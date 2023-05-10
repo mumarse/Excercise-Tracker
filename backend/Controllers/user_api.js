@@ -43,6 +43,7 @@ class UsersData {
             });
 
             res.json({ token });
+
         } catch (error) {
             console.log(error);
             res.status(500).json({ error: 'Server Error' });
@@ -55,6 +56,7 @@ class UsersData {
         try {
 
             let user = await UserData.findOne({ email });
+
             if (!user) {
                 return res.status(400).json({ error: "No User Exist with this Email" });
             }
@@ -77,6 +79,14 @@ class UsersData {
         } catch (error) {
             console.log(error.message);
             res.status(500).json({ error: 'Server Error' });
+        }
+    })
+
+    static logout = asyncHandler(async (req, res, next) => {
+        try {
+            localStorage.removeItem("User")
+        } catch (error) {
+            res.status(500).send(error);
         }
     })
 

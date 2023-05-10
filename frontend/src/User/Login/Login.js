@@ -4,8 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import animationData from '../../Images/dsdlf10_MbephoYReu.json'
-import "./style.css"
-
+import "./style.css";
 
 function Login() {
 
@@ -13,7 +12,6 @@ function Login() {
         email: '',
         password: '',
     });
-
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
@@ -23,10 +21,8 @@ function Login() {
                 .then(res => {
                     console.log(res)
                     localStorage.setItem("User", JSON.stringify(res.data))
-                    window.location = ('/Main')
                     navigate('/Main')
                 })
-
         } catch (error) {
             console.log(error)
         }

@@ -1,8 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.css';
 
 function SideBar() {
+
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        localStorage.removeItem('User');
+        navigate('/Login')
+    }
+
     return (
         <div>
             <div className="wrapper">
@@ -12,13 +20,13 @@ function SideBar() {
                         <li><Link to="/Main"><i className="fas fa-home"></i>Home</Link></li>
                         <li><Link to="/Card"><i className="fas fa-user"></i>Perfomance</Link></li>
                         <li><Link to="/Card"><i className="fas fa-address-card"></i>Weekly Data</Link></li>
-                        <li><Link to="#"><i className="fas fa-project-diagram"></i>F A Q s</Link></li>
-                        <li><Link to="#"><i className="fas fa-blog"></i>Setings</Link></li>
+                        <li><Link to="/FAQs"><i className="fas fa-project-diagram"></i>F A Q s</Link></li>
+                        <li><Link to="/Settings"><i className="fas fa-blog"></i>Setings</Link></li>
                     </ul>
                     <div className='contact'>
                         <ul>
-                            <li><a href="#"><i className="fas fa-home"></i>Contact Us</a></li>
-                            <li><a href="#"><i className="fas fa-user"></i>Logout</a></li>
+                            <li><a href="/contact-us"><i className="fas fa-home"></i>Contact Us</a></li>
+                            <button onClick={handleLogout}>Logout</button>
                         </ul>
                     </div>
                 </div>
